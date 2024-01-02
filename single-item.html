@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop-Pristine Original</title>
+    <link rel="icon" href="../favicon.png" />
+    <link rel="stylesheet" href="../single-item.css" />
+    <link rel="stylesheet" href="../header-footer.css" />
+    <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0./font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="./styles/chabot.css" />
+    <script
+            type="module"
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+            nomodule
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="left-nav" id="menu-item">
+                <ul>
+                    <li><a href="./index.html">HOME</a></li>
+                    <li><a href="./shop.html">SHOP</a></li>
+                    <li class="login-btn mobile-btn">
+                        <a href="login.html">LOGIN</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="logo">
+                <img
+                        class="default_logo"
+                        src="../pristine-logo1.svg "
+                        alt=""
+                />
+
+                <img class="hover_logo" src="../hover-logo.svg" alt="" />
+            </div>
+
+            <div class="right-nav" id="menu-item-right">
+                <ul>
+                    <li class="hidden myaccount-btn"  >
+                        <a href="myaccount.html">MY ACCOUNT</a>
+                    </li>
+                    <li href="myaccount.html" class="hidden"  >
+                        <span>MY ACCOUNT</span>
+                    </li>
+                    <li class="login-btn"><a href="login.html">LOGIN</a></li>
+                    <li class="open-cart-btn">
+                        <i><ion-icon name="cart-outline"></ion-icon></i
+                        ><span class="cart-quantity">0</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-icon" id="menu-toggle">
+                <img src="../menu.png" alt="" />
+            </div>
+            <div class="menu-icon-x" id="menu-x">
+                <img src="../x.svg" alt="" />
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <a class="back-link" href="./shop.html"> < BACK</a>
+
+        <div class="item-container">
+            <div class="item-pics" id="itemPicsContainer">
+                <img data-imgurl="https://prstine.com/wp-content/uploads/2023/12/17-e1703082786691.jpg" class="small-img" src="https://prstine.com/wp-content/uploads/2023/12/17-e1703082786691-100x100.jpg" alt="" />
+                <img data-imgurl="https://prstine.com/wp-content/uploads/2023/12/4-8.jpg" class="small-img" src="https://prstine.com/wp-content/uploads/2023/12/4-8-100x100.jpg" alt="" />
+                <img data-imgurl="https://prstine.com/wp-content/uploads/2023/12/1-9.jpg" class="small-img" src="https://prstine.com/wp-content/uploads/2023/12/1-9-100x100.jpg" alt="" />
+            </div>
+            <div class="item-img">
+                <img id="mainImg" src="https://prstine.com/wp-content/uploads/2023/12/17-e1703082786691.jpg" alt="" />
+            </div>
+            <div class="item-description">
+
+                <h2 id="item-name">WIND BREAKER JACKET</h2>
+
+                <ul class="item-details" id="item-details-list">
+                    <li>Unisex Jacket</li>
+                    <li>Water Repellent</li>
+                    <li>Wind Resistant</li>
+                    <li>Reflective Pristine Logo Front</li>
+                    <li>  Reflective Two Line Logo Back</li>
+                    <li> VeshjeRruge Tag At The Tip Of Collar</li>
+                    <li> Snap Fastening</li>
+                    <li> Elasticated Cuffs & Hem</li>
+                    <li>  Exterior Front Hand Pockets</li>
+                    <li>  Interior One Drop-in Pocket</li>
+                    <li> Exterior Small Shoulder Flap Mini Pocket</li>
+                    <li>  100% Nylon/Polaymide 150gsm</li>
+                    <li>  Responsibly Made Garment</li>
+                    <li>  Handcrafted In Kosovo</li>
+
+                <h2 id="item-price">€199.00</h2>
+
+                    <div class="sizes" id="sizes-container">
+                        <h4>SELECT SIZE <span id="selectedSizeParagraph"></span></h4>
+                        <ul id="sizes-list">
+                             <li id="size1">XS</li>
+                            <li id="size2">S</li>
+                            <li id="size3">M</li>
+                            <li id="size4">L</li>
+                            <li id="size5">XL</li>
+                        </ul>
+                        <h4 id="clear-btn" class="hidden clear-btn">CLEAR</h4>
+                    </div>
+
+
+
+                <div class="btn-container">
+                    <button class="btn-grey" id="add-item-btn">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sizeModal" class="custom-modal">
+        <div class="modal-content">
+            <div class="modal_header">
+                <span class="custom-close">&times;</span>
+            </div>
+            <p class="modal-message"></p>
+        </div>
+    </div>
+</main>
+
+
+<script>
+    const imgs = document.querySelectorAll('.small-img')
+    const mainImg = document.getElementById('mainImg')
+
+
+    imgs.forEach(item => {
+        item.addEventListener('click', () =>{
+            mainImg.setAttribute('src', item.dataset.imgurl)
+        })
+    })
+</script>
+
+
+
+<!-- BEGIN FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer">
+            <h4>ALL RIGHTS RESERVED, PRISTINE 2023</h4>
+            <a href="">FEATURED IN GQ</a>
+            <a href="store.html">STORE</a>
+
+            <div class="footer-right">
+                <a class="first-link" href="">SITE POLICY</a>
+
+                <a href="">TERMS OF USE</a>
+                <a href="customercare.html">CUSTOMER CARE</a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>Copyright &copy; 2023-2024 Rion</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
